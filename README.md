@@ -16,11 +16,17 @@ See the included example!
 ## States
 
 `ST_Reset` = Timer was reset
+
 `ST_Running` = Timer is currently running
+
 `ST_LeftHandOnTimer` = Left hand is on timer (Not supported by all timers!)
+
 `ST_RightHandOnTimer` = Right hand is on timer (Not supported by all timers!)
+
 `ST_BothHandsOnTimer` = Both hand is on timer, preparing to start (Not supported by all timers!)
+
 `ST_ReadyToStart` = Ready to start (Not supported by all timers!)
+
 `ST_Stopped` = The timer has been stopped
 
 ## Known working timers
