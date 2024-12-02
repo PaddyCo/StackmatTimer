@@ -90,14 +90,14 @@ bool StackmatTimer::ParseTimerData(String data)
 {
     uint64_t lastUpdated = millis();
     StackmatTimerState newState = static_cast<StackmatTimerState>(data[0]);
-    uint8_t minutes = data.substring(1, 2).toInt();
-    uint8_t seconds = data.substring(2, 4).toInt();
-    uint16_t millis = data.substring(4, 7).toInt();
-    uint8_t checksum = (int)data[7];
+    uint32_t minutes = data.substring(1, 2).toInt();
+    uint32_t seconds = data.substring(2, 4).toInt();
+    uint32_t millis = data.substring(4, 7).toInt();
+    uint32_t checksum = (int)data[7];
     uint32_t totalMs = (((minutes * 60) + seconds) * 1000) + millis;
 
     // Checksum is the sum of all digits + 64
-    uint8_t sum = 64;
+    uint32_t sum = 64;
     for (int i = 1; i < 7; i++)
     {
         sum += data.substring(i, i + 1).toInt();
